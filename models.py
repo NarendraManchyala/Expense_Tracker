@@ -14,7 +14,7 @@ class Transaction(db.Model):
     type = db.Column(db.String(10), nullable=False)
     description = db.Column(db.String(200))
     date = db.Column(db.Date)
-    trip_id = db.Column(db.Integer, db.ForeignKey('trip.id'), nullable=True)
+
 
 class Trip(db.Model):
 
@@ -25,4 +25,3 @@ class Trip(db.Model):
     end_date = db.Column(db.Date, nullable=False)
     budget = db.Column(db.Float, nullable=False)
     description = db.Column(db.String(200))
-    transactions = db.relationship('Transaction', backref='trip', lazy=True)

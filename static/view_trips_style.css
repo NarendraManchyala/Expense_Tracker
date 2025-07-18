@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    display: flex;
+}
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background-color: #1e1e1e;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.sidebar h2 {
+    color: #00ffd1;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 16px 0;
+}
+
+.sidebar ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 12px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #00ffd1;
+    color: #000;
+    font-weight: bold;
+}
+
+.main-content {
+    margin-left: 240px;
+    padding: 40px;
+    flex: 1;
+}
+
+h1 {
+    color: #00ffd1;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+/* Trip Card */
+.trip-card {
+    display: grid
+    background-color: #1e1e1e;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 255, 209, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.trip-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(0, 255, 209, 0.3);
+}
+
+.trip-title {
+    font-size: 20px;
+    color: #00ffd1;
+    margin-bottom: 10px;
+}
+
+.trip-info {
+    font-size: 14px;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+.trip-info span {
+    font-weight: 600;
+    color: #ccc;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .trips-grid {
+        grid-template-columns: 1fr;
+    }
+}

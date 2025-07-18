@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>EXPENSE TRACKER</h2>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('add_transaction') }}">Add_Expenses</a></li>
+            <li><a href="{{ url_for('add_trip') }}">Trips</a></li>
+            <li><a href="{{ url_for('view_trips') }}">View Trips</a></li>
+            <li><a href="#">Approvals</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+<div class="main-content">
+        <h1>Welcome to the Personal Expense Tracker</h1>
+        <p>Track your expenses, manage trips, request approvals, and configure settings with ease.</p>
+    </div>
+
+</body>
+</html>

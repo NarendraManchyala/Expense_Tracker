@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Trips Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='trips_style.css') }}">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>EXPENSE TRACKER</h2>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('add_transaction') }}">Add_Expenses</a></li>
+            <li><a href="{{ url_for('add_trip') }}">Trips</a></li>
+            <li><a href="{{ url_for('view_trips') }}">View Trips</a></li>
+            <li><a href="#">Approvals</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="container">
+            <h1>Add Trip</h1>
+            <form method="POST">
+                <label for="trip_name">Trip Name:</label>
+                <input type="text" name="trip_name" required>
+
+                <label for="destination">Destination:</label>
+                <input type="text" name="destination" required>
+
+                <label for="start_date">Start Date:</label>
+                <input type="date" name="start_date" required>
+
+                <label for="end_date">End Date:</label>
+                <input type="date" name="end_date" required>
+
+                <label for="budget">Budget:</label>
+                <input type="number" step="0.01" name="budget" required>
+
+                <label for="description">Description:</label>
+                <textarea name="description" rows="4"></textarea>
+
+                <button type="submit">Add Trip</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

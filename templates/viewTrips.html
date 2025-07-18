@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Trips</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_trips_style.css') }}">
+</head>
+<body>
+<div class="sidebar">
+    <h2>EXPENSE TRACKER</h2>
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('add_transaction') }}">Add_Expenses</a></li>
+        <li><a href="{{ url_for('add_trip') }}">Trips</a></li>
+        <li><a href="{{ url_for('view_trips') }}">View Trips</a></li>
+        <li><a href="#">Approvals</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <h1>All Trips</h1>
+    <div class="trips-grid">
+        {% for trip in trips %}
+        <div class="trip-card">
+            <div class="trip-title">{{ trip.trip_name }}</div>
+            <div class="trip-info"><span>Destination:</span> {{ trip.destination }}</div>
+            <div class="trip-info"><span>Start Date:</span> {{ trip.start_date }}</div>
+            <div class="trip-info"><span>End Date:</span> {{ trip.end_date }}</div>
+            <div class="trip-info"><span>Budget:</span> ₹{{ trip.budget }}</div>
+            <div class="trip-info"><span>Description:</span> {{ trip.description }}</div>
+            <a href="{{ url_for('edit_details', trip_id=trip.trip_id) }}"><button>Edit Trip</button></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
